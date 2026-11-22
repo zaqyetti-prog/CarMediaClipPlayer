@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="72dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="4dp">
+
+    <!-- Gain value (e.g. +4 dB) -->
+    <TextView
+        android:id="@+id/txtBandGain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 dB"
+        android:textColor="@color/ios_cyan"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <!-- Vertical SeekBar representation -->
+    <!-- On Android standard SeekBar, rotation=270 creates a sleek vertical slider -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <SeekBar
+            android:id="@+id/seekBand"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:rotation="270"
+            android:progressTint="@color/ios_cyan"
+            android:thumbTint="@color/ios_cyan" />
+    </FrameLayout>
+
+    <!-- Center Frequency (e.g. 1 kHz) -->
+    <TextView
+        android:id="@+id/txtBandFreq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 kHz"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

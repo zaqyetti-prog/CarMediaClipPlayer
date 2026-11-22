@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- iOS 27 Sleek Glassmorphism Dark Theme Palette -->
+    <color name="bg_midnight">#0B0C10</color>
+    <color name="bg_car_dark">#0F111A</color>
+    <color name="glass_card">#CC181A26</color>
+    <color name="glass_card_stroke">#33FFFFFF</color>
+    <color name="glass_card_active">#E6202438</color>
+    <color name="glass_header">#E6121420</color>
+    
+    <!-- Neon & iOS 27 Dynamic Accents -->
+    <color name="ios_blue">#0A84FF</color>
+    <color name="ios_cyan">#00E5FF</color>
+    <color name="ios_purple">#9D4EDD</color>
+    <color name="ios_pink">#FF2A85</color>
+    <color name="ios_green">#30D158</color>
+    <color name="ios_orange">#FF9F0A</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#8E93A6</color>
+    <color name="text_muted">#555A6E</color>
+    
+    <!-- Sliders & EQ -->
+    <color name="slider_track_bg">#25293A</color>
+    <color name="slider_thumb_glow">#6600E5FF</color>
+    <color name="eq_cut_filter">#FF453A</color>
+</resources>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_glass_dialog"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_equalizer"
+                app:tint="@color/ios_cyan" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="14dp"
+                android:text="@string/title_equalizer"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Enable/Disable Switch -->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchEqEnabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:thumbTint="@color/ios_cyan"
+                app:trackTint="@color/ios_purple" />
+
+            <ImageButton
+                android:id="@+id/btnCloseEq"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/bg_circle_button"
+                android:src="@drawable/ic_close"
+                app:tint="@color/text_primary"
+                android:contentDescription="@string/btn_close" />
+        </LinearLayout>
+
+        <!-- Presets Row (iOS 27 glass pill buttons) -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/layoutPresets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnPresetFlat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/preset_flat"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp"
+                    android:background="@drawable/bg_circle_button" />
+
+                <Button
+                    android:id="@+id/btnPresetBass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/preset_car_bass"
+                    android:textColor="@color/ios_cyan"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_circle_button" />
+
+                <Button
+                    android:id="@+id/btnPresetVocal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/preset_vocal"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp"
+                    android:background="@drawable/bg_circle_button" />
+
+                <Button
+                    android:id="@+id/btnPresetRock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/preset_rock"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp"
+                    android:background="@drawable/bg_circle_button" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Multi-Band Equalizer Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_glass_card"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BANDAS GRÁFICAS DE FREQUÊNCIA"
+                android:textColor="@color/ios_cyan"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvEqBands"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <!-- Frequency Cuts (Crossover HPF / LPF) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_glass_card"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_frequency_cuts"
+                android:textColor="@color/ios_pink"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_low_cut"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Corta subgraves para evitar distorção nos falantes de porta"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchLowCut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:thumbTint="@color/ios_pink"
+                    app:trackTint="#50FF2A85" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#26FFFFFF"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_high_cut"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Atenua frequências estridentes em tweeters automotivos"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchHighCut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:thumbTint="@color/ios_pink"
+                    app:trackTint="#50FF2A85" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Bass Boost & Loudness Sliders -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_glass_card"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <!-- Bass Boost -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/lbl_bass_boost"
+                    android:textColor="@color/ios_purple"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtBassBoostValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textColor="@color/ios_cyan"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seekBassBoost"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:max="1000"
+                android:progressTint="@color/ios_purple"
+                android:thumbTint="@color/ios_purple" />
+
+            <!-- Loudness (Gain) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/lbl_loudness"
+                    android:textColor="@color/ios_green"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtLoudnessValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 dB"
+                    android:textColor="@color/ios_green"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seekLoudness"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:max="1500"
+                android:progressTint="@color/ios_green"
+                android:thumbTint="@color/ios_green" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

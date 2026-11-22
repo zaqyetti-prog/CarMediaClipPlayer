@@ -1,0 +1,53 @@
+name: Build Car Clip Player APK
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch: # Permite compilar manualmente com 1 clique no GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Configurar JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Conceder permissão de execução ao gradlew
+        run: chmod +x gradlew || true
+
+      - name: Gerar Gradle Wrapper se necessário
+        run: |
+          if [ ! -f gradlew ]; then
+            gradle wrapper --gradle-version 8.5
+          fi
+          chmod +x gradlew
+
+      - name: Compilar APK (Release e Debug)
+        run: ./gradlew assembleRelease assembleDebug --stacktrace
+
+      - name: Renomear APKs para fácil identificação
+        run: |
+          mkdir -p output-apk
+          if [ -f app/build/outputs/apk/release/app-release.apk ]; then
+            cp app/build/outputs/apk/release/app-release.apk output-apk/CarClipPlayer-Release-Android7+.apk
+          fi
+          if [ -f app/build/outputs/apk/debug/app-debug.apk ]; then
+            cp app/build/outputs/apk/debug/app-debug.apk output-apk/CarClipPlayer-Debug-Android7+.apk
+          fi
+
+      - name: Publicar APK como Artefato do GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: CarClipPlayer-APK
+          path: output-apk/*.apk
+          retention-days: 30

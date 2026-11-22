@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Car Clip Player</string>
+    <string name="title_folders">PASTAS DO PEN DRIVE</string>
+    <string name="title_videos">CLIPES NA PASTA</string>
+    <string name="title_equalizer">EQUALIZADOR DSP PRO</string>
+    <string name="btn_equalizer">Equalizador</string>
+    <string name="btn_folders">Pastas</string>
+    <string name="btn_refresh">Atualizar Pen Drive</string>
+    <string name="btn_close">Fechar</string>
+    <string name="auto_resuming">Retomando reprodução automaticamente...</string>
+    <string name="no_usb_found">Nenhum Pen Drive encontrado. Conecte um Pen Drive USB com vídeos.</string>
+    <string name="scanning_usb">Varrendo pastas e arquivos de vídeo do Pen Drive...</string>
+    <string name="lbl_bass_boost">REFORÇO DE GRAVES (BASS BOOST)</string>
+    <string name="lbl_loudness">LOUDNESS GAIN (VOLUME EXTRA)</string>
+    <string name="lbl_frequency_cuts">CORTES DE FREQUÊNCIA (HPF / LPF)</string>
+    <string name="lbl_low_cut">Corte Sub-Grave (HPF 60Hz)</string>
+    <string name="lbl_high_cut">Corte Agudos Extremos (LPF 14kHz)</string>
+    <string name="preset_flat">Flat / Padrão</string>
+    <string name="preset_car_bass">Grave Forte (Automotivo)</string>
+    <string name="preset_vocal">Voz / Médios</string>
+    <string name="preset_rock">Rock / Dinâmico</string>
+    <string name="preset_custom">Personalizado</string>
+</resources>

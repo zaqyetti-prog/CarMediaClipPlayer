@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/folderCardContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/bg_glass_card"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="20dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Big Folder Icon for easy visibility in car -->
+    <ImageView
+        android:id="@+id/imgFolderIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_folder"
+        app:tint="@color/ios_cyan" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtFolderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pastas de Clipes"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1" />
+
+        <TextView
+            android:id="@+id/txtVideoCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="35 Clipes de Vídeo"
+            android:textColor="@color/ios_purple"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_next"
+        app:tint="@color/text_secondary" />
+
+</LinearLayout>
